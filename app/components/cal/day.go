@@ -169,7 +169,7 @@ func (d Day) HeadingMOS(prefix, leaf string) string {
 	r1 = append(r1, tex.Multirow(2, tex.ResizeBoxW(`\myLenHeaderResizeBox`, day)))
 	r2 = append(r2, "")
 	r1 = append(r1, tex.Bold(d.Time.Weekday().String()))
-	r2 = append(r2, d.Time.Month().String())
+	r2 = append(r2, hyper.Link(d.Time.Month().String(), d.Time.Month().String()))
 
 	if d.NextExists() {
 		rl = "l"
